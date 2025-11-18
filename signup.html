@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+
+
+    <!-- ICONS FROM FONT AWSOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- CSS LINKING -->
+    <link rel="stylesheet" href="style/style.css"> <!-- Main -->
+    <link rel="stylesheet" href="style/input.css"> <!-- Main -->
+</head>
+<body>
+    <!-- STICKY AVBAR -->
+    <header>
+        <div class="brand">
+            <img class="logo" src="images/The_blog_logo.png" alt="Logo">
+            <h3>The "Blog"</h3>
+        </div>
+        <nav class="navbar">
+            <div class="decoration">
+                <a href="#" class="divider-line">.</a>
+                <a href="#" class="divider-line">.</a>
+            </div>
+            <a href="#"><i class="fa-solid fa-house"></i></a> <!-- Home -->
+            <a href="#"><i class="fa-solid fa-user-group"></i></a> <!-- Friend/Group -->
+            <a href="#"><i class="fa-solid fa-bell"></i></a> <!-- Notification -->
+            <a href="profile.html"> <!-- Profile -->
+                <img src="" alt="">
+            </a>
+        </nav>
+    </header>
+
+    <!-- SIGN UP FORM -->
+    <div class="form-container">
+        <form action="signup.php" method="post" id="signup-form" class="inline-flex flex-col justify-center items-center p-5">
+            <h3>SIGN UP</h3>
+            <div class="input-form my-2 flex flex-col w-full">
+                <label for="username"><i class="fa-solid fa-user"></i> Username</label>
+                <input type="text" name="username" placeholder="Username" class="border rounded">
+            </div>
+    
+            <div class="input-form my-2 flex flex-col w-full">
+                <label for="email"><i class="fa-solid fa-at"></i> Email</label>
+                <input type="email" name="email" placeholder="Email" class="border rounded">            
+            </div>
+    
+            <div class="input-form my-2 flex flex-col w-full">
+                <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
+                <input type="password" name="password" placeholder="Password" class="border rounded">            
+            </div>
+    
+            <button type="submit" name="signup" class="primary-btn">
+                Sign Up
+            </button>
+            <p>Have an account? <a href="login.php" class="underline">Login Here!</a></p>
+        </form>
+    </div>
+
+
+    <!-- TAILWIND CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</body>
+</html>

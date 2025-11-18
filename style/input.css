@@ -1,0 +1,34 @@
+.form-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;   
+    min-height: 90vh;
+}
+
+#signup-form{
+    background-color: var(--lavender);
+    border-radius: 10px;
+    box-shadow: var(--purple) 4px 4px 0 0;
+}
+
+
+.form-container h3{
+    font-family: var(--title);
+    color: var(--purple);
+    font-size: var(--fz-title);
+}
+
+.form-container input{
+    background-color: var(--light);
+    box-shadow: var(--purple) 2px 2px 0 0;
+    border: 1px solid var(--purple);
+    font-size: var(--fz-normal);
+    padding: 3% 4%;
+    width: 250px;
+}
+
+.form-container label{
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: var(--purple);
+}

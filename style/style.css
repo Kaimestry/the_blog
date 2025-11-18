@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+/*This file is used for:
+- Header/Navbar and Footer
+- Buttons
+- Colors
+- Inputs
+- Forms
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --white: #F2EBFF;
+    --light: #e7e9ff;
+    --lavender: #9AA0FF;
+    --light-purple: #3d4bce;
+    --purple: #131E99;
+    --title: 'Momo Trust Display';
+    --text: 'nunito';
+    --fz-title: 20px;
+    --fz-normal: 15px;
+}
+
+body{
+    background-color: var(--white);
+}
+
+/* NAVBAR */
+header{
+    background-color: var(--lavender);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 30px;
+    align-items: center;
+    overflow: hidden;
+    cursor: default;
+}
+
+.navbar{
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar a{
+    padding: 14px 10px;
+    margin-left: 7px;
+    background-color: var(--purple);
+    color: var(--lavender);
+    font-size: var(--fz-normal);
+    text-decoration: none;
+    font-family: var(--title);
+}
+
+
+.navbar a:hover{
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.navbar .decoration{
+    margin-inline: 10px;
+}
+
+.navbar .divider-line{
+    padding: 19px 5px;
+    color: var(--purple);
+}
+
+.navbar .divider-line:hover{
+    opacity: 1;
+    cursor: default;
+}
+
+.brand{
+    display: flex;
+    flex-direction: row;
+    color: var(--purple);
+    font-size: var(--fz-title);
+    font-family: var(--title);
+    margin-left: 10px;
+}
+
+header img{
+    width: 25px;
+    height: 25px;
+}
+
+/* BUTTON */
+button{
+    cursor: pointer;
+    color: var(--purple);
+}
+
+.icon-btn{
+    border: none;
+    background: none;
+    font-size: 30px;
+}
+
+.primary-btn{
+    border-radius: 5px;
+    border: 1px solid var(--purple);
+    padding: 8px 15px;
+    background-color: var(--light-purple);
+    color: var(--white);
+    font-weight: 500;   
+    margin: 3%;
+    box-shadow: var(--purple) 4px 4px 0 0;
+}

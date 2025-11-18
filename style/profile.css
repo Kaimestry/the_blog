@@ -1,0 +1,74 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 450px;
+    margin-block: 5%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--lavender);
+    color: var(--purple); /*TEXT COLOR*/
+    font-family: var(--text);
+}
+
+.small-container .container-content{
+    padding: 2% 5%;
+}
+
+.container-title{
+    background-color: var(--purple);
+    width: 100%;
+    text-align: center;
+    color: var(--lavender);
+    font-family: var(--title);
+}
+
+.content-group{
+    margin-block: 5%;
+}
+
+.group-title{
+    font-size: 15px;
+}
+
+/* PROFILE CONTAINER */
+.profile-header{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.profile-header figure{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    background-color: aliceblue;
+}
+
+.profile-header .content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80px;
+}
+
+.profile-popularity{
+    display: flex;
+    justify-content: space-between;
+}
+
+.profile-bio{
+    background-color: var(--white);
+    padding: 3%;
+    border-radius: 10px;
+    font-size: 14px;
+}
