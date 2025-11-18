@@ -1,3 +1,7 @@
+:root{
+    --error-red: #a82e2e;
+}
+
 .form-container {
     display: flex;
     justify-content: center; 
@@ -31,4 +35,14 @@
     margin-bottom: 4px;
     font-size: 14px;
     color: var(--purple);
+}
+
+/* FLASH MSG */
+.form-container input.flash-error{
+    box-shadow: var(--error-red) 2px 2px 0 0;
+    border: 1px solid var(--error-red);
+}
+
+.flash-msg-error{
+    color: var(--error-red);
 }

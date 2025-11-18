@@ -39,17 +39,26 @@
             <h3>SIGN UP</h3>
             <div class="input-form my-2 flex flex-col w-full">
                 <label for="username"><i class="fa-solid fa-user"></i> Username</label>
-                <input type="text" name="username" placeholder="Username" class="border rounded">
+                <input type="text" name="username" placeholder="Username" class="border rounded flash-error" required>
+                <span class="flash-msg-error"><i class="fa-regular fa-circle-xmark"></i>
+                    'username' is already taken!
+                </span>
             </div>
     
             <div class="input-form my-2 flex flex-col w-full">
                 <label for="email"><i class="fa-solid fa-at"></i> Email</label>
-                <input type="email" name="email" placeholder="Email" class="border rounded">            
+                <input type="email" name="email" placeholder="Email" class="border rounded" required>
+                <span class="flash-msg-error"><i class="fa-regular fa-circle-xmark"></i>
+                    'email' is already taken!
+                </span>                          
             </div>
     
             <div class="input-form my-2 flex flex-col w-full">
                 <label for="password"><i class="fa-solid fa-lock"></i> Password</label>
-                <input type="password" name="password" placeholder="Password" class="border rounded">            
+                <input type="password" name="password" placeholder="Password" class="border rounded" required>            
+                <span class="flash-msg-error"><i class="fa-regular fa-circle-xmark"></i>
+                    'password' is too short!
+                </span>                
             </div>
     
             <button type="submit" name="signup" class="primary-btn">
