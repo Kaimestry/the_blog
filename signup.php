@@ -34,6 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         if (mysqli_query($conn, $query)) {
             header("Location: index.php");
             exit();
+
+        //start session
+        $_SESSION['username'] = $row['username'];
+        $_SESSION['display_username'] = $row['display_username'];
+        $_SESSION['email'] = $row['email'];
+        $_SESSION['signup_date'] = $row['signup_date'];   
+             
         } else {
             $errors['general'] = "Database error, try again.";
         }
