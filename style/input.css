@@ -2,47 +2,72 @@
     --error-red: #a82e2e;
 }
 
+/* Center the form */
 .form-container {
     display: flex;
-    justify-content: center; 
-    align-items: center;   
+    justify-content: center;
+    align-items: center;
     min-height: 90vh;
+    font-family: var(--text);
 }
 
-#signup-form{
+/* Form styling */
+.signup-form {
     background-color: var(--lavender);
+    padding: 24px;
     border-radius: 10px;
-    box-shadow: var(--purple) 4px 4px 0 0;
+    box-shadow: 4px 4px 0 var(--purple);
+    width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
 }
 
-
-.form-container h3{
+/* Form title */
+.signup-form h3 {
+    color: var(--purple);
     font-family: var(--title);
-    color: var(--purple);
     font-size: var(--fz-title);
+    margin-bottom: 16px;
+    text-align: center;
 }
 
-.form-container input{
-    background-color: var(--light);
-    box-shadow: var(--purple) 2px 2px 0 0;
-    border: 1px solid var(--purple);
+/* Each input field container */
+.input-form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+/* Labels */
+.input-form label {
     font-size: var(--fz-normal);
-    padding: 3% 4%;
-    width: 250px;
-}
-
-.form-container label{
-    margin-bottom: 4px;
-    font-size: 14px;
     color: var(--purple);
+    margin-bottom: 4px;
 }
 
-/* FLASH MSG */
-.form-container input.flash-error{
-    box-shadow: var(--error-red) 2px 2px 0 0;
+/* Inputs */
+.input-form input {
+    padding: 8px 12px;
+    font-size: var(--fz-normal);
+    border: 1px solid var(--lavender);
+    border-radius: 6px;
+    outline: none;
+}
+
+/* Inputs with error */
+.flash-error {
     border: 1px solid var(--error-red);
+    box-shadow: 2px 2px 0 var(--error-red);
 }
 
-.flash-msg-error{
+/* Error messages */
+.flash-msg-error {
+    font-size: var(--fz-normal);
     color: var(--error-red);
+    margin-top: 4px;
+}
+
+.signup-form p{
+    text-align: center;
 }
