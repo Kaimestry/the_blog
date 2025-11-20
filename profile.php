@@ -1,3 +1,14 @@
+<?php
+//include_once('settings.php');
+session_start();
+
+
+if (!isset($_SESSION['email'])) {
+    //Check if not logged in
+    $_SESSION['username'] = "Guest Account"; 
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +35,10 @@
                         <img src="" alt="" class="userxxxxxxxxx-pfp">
                     </figure>
                     <div class="content">
-                        <h3 class="group-title"><span class="text-bold">USERNAME: </span><span>something</span></h3>
+                        <h3 class="group-title">
+                            <span class="text-bold">USERNAME: </span>
+                            <span><?php echo ($_SESSION['username']) ?></span>
+                        </h3>
                         <h3 class="group-title"><span class="text-bold">JOINED SINCE: </span><span>July 19 2025</span></h3>
                     </div>
                     <button class="icon-btn" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>

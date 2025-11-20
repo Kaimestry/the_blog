@@ -70,5 +70,5 @@
     background-color: var(--white);
     padding: 3%;
     border-radius: 10px;
-    font-size: 14px;
+    font-size: var(--fz-normal);
 }

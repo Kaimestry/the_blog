@@ -10,16 +10,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- CSS LINKING -->
     <link rel="stylesheet" href="style/style.css"> <!-- Main -->
-    <link rel="stylesheet" href="style/profile.css"> <!-- Specific webpage -->
-</head>
 <body>
     <!-- STICKY AVBAR -->
     <?php include "elements/navbar.php"?>
 
-    <div class="test flex">
-        <p>asdf</p>
-        <p>asdf</p>
-        <p>asdf</p>
-    </div>
 </body>
 </html>

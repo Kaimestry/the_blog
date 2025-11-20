@@ -28,6 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             // Start session after successful login
             session_start();
             $_SESSION['username'] = $row['username'];         
+            $_SESSION['email'] = $row['email'];         
             header("Location: index.php");
             exit();
         }
