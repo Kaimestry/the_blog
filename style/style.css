@@ -17,7 +17,7 @@
 
 :root{
     --white: #F2EBFF;
-    --light: #e7e9ff;
+    --light: hsl(235, 100%, 95%);
     --lavender: #9AA0FF;
     --light-purple: #3d4bce;
     --purple: #131E99;
@@ -38,6 +38,19 @@ body{
 button{
     cursor: pointer;
     color: var(--purple);
+    white-space: nowrap;  /* Keep all text in a single line */
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-weight: 500;   
+    margin: 3%;
+    box-shadow: var(--purple) 4px 4px 0 0;    
+    border: 1px solid var(--purple);
+}
+
+.btn-row{
+    margin-top: 4%;
+    display: flex;
+    gap: 5%;
 }
 
 .icon-btn{
@@ -46,19 +59,19 @@ button{
     font-size: 30px;
 }
 
-.primary-btn, .secondary-btn{
-    white-space: nowrap;  /* Keep all text in a single line */
-    border-radius: 5px;
-    border: 1px solid var(--purple);
-    padding: 8px 15px;
+.primary-btn{
     background-color: var(--light-purple);
     color: var(--white);
-    font-weight: 500;   
-    margin: 3%;
-    box-shadow: var(--purple) 4px 4px 0 0;
 }
 
 .secondary-btn{
     background-color: var(--light);
     color: var(--purple);
+}
+
+.long-btn{
+    box-shadow: var(--purple) 2px 2px 0 0;    
+    background-color: var(--light);
+    display: block;
+    width: 100%;   
 }

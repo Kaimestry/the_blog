@@ -84,6 +84,7 @@ $user = getUserData($conn);
         position: absolute;
         top: 35px;
         right: 2%;
+        max-width: 350px;
         background: var(--lavender);
         padding: 2%;
         border: 1px solid var(--purple);
@@ -101,11 +102,20 @@ $user = getUserData($conn);
         width: 40px;
         height: 40px;
     }
-
-    .btn-group{
-        display: flex;
-        gap: 5%;
+    .btn-row, .btn-col{
+        transform: translateX(-8px);
     }
+    hr{
+        height: 3px;
+        background-color: var(--purple);
+        border: none;
+        margin-block: 5%;
+    }
+    #theme-btn{
+        background: linear-gradient(-45deg, var(--lavender) 40%, var(--light-purple) 30%);
+        color: var(--white);
+    }
+
 </style>
 
     <!-- STICKY AVBAR -->
@@ -154,14 +164,20 @@ $user = getUserData($conn);
                         <h4>@<?= $user['username'] ?? ''; ?></h4>
                     </figcaption>
                 </figure>
-                <section class="btn-group">
+                <div class="btn-row">
                     <form action="profile.php">
                         <button type="submit" class="primary-btn">View Profile</button>
                     </form>
                     <form action="process/logout.php">
                         <button type="submit" class="secondary-btn">Logout</button>
                     </form>
-                </section>
+                </div>
+                <hr>
+                <div class="btn-col">
+                    <button class="long-btn">Setting</button>
+                    <button class="long-btn" id="theme-btn">Switch Theme</button>
+                </div>
+
             <?php endif; ?>
 
         </div>
