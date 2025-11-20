@@ -1,5 +1,7 @@
 <?php
 session_start();
+include_once('process/settings.php');
+include_once('process/functions.php');
 
 // Check if the user is logged in
 if (!isset($_SESSION['username'])) {
@@ -8,6 +10,7 @@ if (!isset($_SESSION['username'])) {
     exit();
 }
 
+$user = getUserData($conn);
 //future feature: login lead to previous tab
 ?>
 
@@ -38,10 +41,12 @@ if (!isset($_SESSION['username'])) {
                     </figure>
                     <div class="content">
                         <h3 class="group-title">
-                            <span class="text-bold">USERNAME: </span>
-                            <span><?php echo ($_SESSION['username']) ?></span>
+                            <span class="text-bold">Display Name: </span>
+                            <span><?= $user['display_username'] ?? 'Not set yet'; ?></span>
                         </h3>
-                        <h3 class="group-title"><span class="text-bold">JOINED SINCE: </span><span>July 19 2025</span></h3>
+                        <h3 class="group-title">
+                            <span class="text-bold">Username: </span>
+                            <span><?= $user['username'] ?? ''; ?></span></h3>
                     </div>
                     <button class="icon-btn" type="submit"><i class="fa-solid fa-pen-to-square"></i></button>
                 </div>
