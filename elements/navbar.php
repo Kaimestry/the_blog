@@ -71,8 +71,14 @@ header img{
 #profile-widget {
     display: none; /* hidden by default */
     position: absolute;
-    top: 50px;
-    right: 0px;
+    top: 35px;
+    right: 5%;
+    background: var(--lavender);
+    padding: 2%;
+    border: 1px solid var(--purple);
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 var(--purple);    
+
 }
 </style>
 
