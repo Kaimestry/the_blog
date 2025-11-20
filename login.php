@@ -1,3 +1,41 @@
+<?php include_once('process/settings.php');
+
+$errors = [
+    'username' => '',
+    'email' => '',
+    'password' => ''
+];
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+
+    // Get input safely
+    $username = mysqli_real_escape_string($conn, $_POST['username']);
+    // $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $raw_password = $_POST['password'];
+
+    // Check if username registered
+    $check_username = mysqli_query($conn, "SELECT * FROM users WHERE username='$username'");
+    if (mysqli_num_rows($check_username) == 0) {
+        $errors['username'] = "Can't find account with: '" . $username . "'";
+    };
+
+    //check if password matches with existing username
+    if (mysqli_num_rows($check_username) > 0) {
+        $row = mysqli_fetch_assoc($check_username);
+        if (!password_verify($raw_password, $row['password'])) {
+            $errors['password'] = "Invalid password";
+        } else {
+            // Start session after successful login
+            session_start();
+            $_SESSION['username'] = $row['username'];         
+            header("Location: index.php");
+            exit();
+        }
+}
+
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,14 +62,26 @@
 
             <div class="input-form">
                 <label for="username">Username</label>
-                <input type="text" id="username" class="flash-error">
-                <span class="flash-msg-error">Username is already taken!</span>
+                <input type="text" id="username" name="username"
+                    placeholder="Username"
+                    class="<?= !empty($errors['username']) ? 'flash-error' : '' ?>"
+                    value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
+
+                <?php if (!empty($errors['username'])): ?>
+                    <span class="flash-msg-error"><i class="fa-regular fa-circle-xmark"></i> <?= $errors['username'] ?></span>
+                <?php endif; ?>            
             </div>
 
             <div class="input-form">
                 <label for="password">Password</label>
-                <input type="password" id="password">
-                <span class="flash-msg-error">Password is too short!</span>
+                <input type="password" id="password" name="password"
+                    placeholder="Password"
+                    class="<?= !empty($errors['password']) ? 'flash-error' : '' ?>"
+                    value="<?= htmlspecialchars($_POST['password'] ?? '') ?>">
+
+                <?php if (!empty($errors['password'])): ?>
+                    <span class="flash-msg-error"><i class="fa-regular fa-circle-xmark"></i> <?= $errors['password'] ?></span>
+                <?php endif; ?>            
             </div>
 
             <button type="submit" class="primary-btn">Sign Up</button>

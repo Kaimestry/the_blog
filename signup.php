@@ -62,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <!-- CSS LINKING -->
     <link rel="stylesheet" href="style/style.css"> <!-- Main -->
-    <link rel="stylesheet" href="style/input.css"> <!-- Main -->
+    <link rel="stylesheet" href="style/input.css"> 
 </head>
 <body>
     <!-- STICKY AVBAR -->
@@ -78,6 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     Username
                 </label>
                 <input type="text" id="username" name="username"
+                    placeholder="Username"
                     class="<?= !empty($errors['username']) ? 'flash-error' : '' ?>"
                     value="<?= htmlspecialchars($_POST['username'] ?? '') ?>">
 
@@ -91,6 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                     Email
                 </label>
                 <input type="email" id="email" name="email"
+                    placeholder="Email"
                     class="<?= !empty($errors['email']) ? 'flash-error' : '' ?>"
                     value="<?= htmlspecialchars($_POST['email'] ?? '') ?>">
 
@@ -103,7 +105,9 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 <label for="password"><i class="fa-solid fa-lock"></i> 
                     Password
                 </label>
-                <input type="password" id="password" name="password" minlength="4">
+                <input type="password" id="password" 
+                    placeholder="Password"
+                    name="password" minlength="4">
             </div>
 
             <button type="submit" class="primary-btn">Sign Up</button>

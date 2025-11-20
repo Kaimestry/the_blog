@@ -15,5 +15,11 @@
 <body>
     <!-- STICKY AVBAR -->
     <?php include "elements/navbar.php"?>
+
+    <div class="test flex">
+        <p>asdf</p>
+        <p>asdf</p>
+        <p>asdf</p>
+    </div>
 </body>
 </html>
