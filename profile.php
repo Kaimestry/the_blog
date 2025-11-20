@@ -1,12 +1,12 @@
 <?php
-//include_once('settings.php');
 session_start();
 
-
+// Check if the user is logged in
 if (!isset($_SESSION['email'])) {
-    //Check if not logged in
-    $_SESSION['username'] = "Guest Account"; 
-};
+    // Not logged in, redirect to login page
+    header("Location: login.php");
+    exit();
+}
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +60,9 @@ if (!isset($_SESSION['email'])) {
         <!-- <section class="small-container profile-wall">
             <h2 class="container-title">Post</h2>
         </section> -->
+        <form action="process/logout.php">
+            <button type="submit" class="primary-btn">Logout</button>
+        </form>
     </div>
 </body>
 </html>
