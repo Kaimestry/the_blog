@@ -2,11 +2,13 @@
 session_start();
 
 // Check if the user is logged in
-if (!isset($_SESSION['email'])) {
+if (!isset($_SESSION['username'])) {
     // Not logged in, redirect to login page
     header("Location: login.php");
     exit();
 }
+
+//future feature: login lead to previous tab
 ?>
 
 <!DOCTYPE html>
