@@ -46,7 +46,8 @@ button{
     font-size: 30px;
 }
 
-.primary-btn{
+.primary-btn, .secondary-btn{
+    white-space: nowrap;  /* Keep all text in a single line */
     border-radius: 5px;
     border: 1px solid var(--purple);
     padding: 8px 15px;
@@ -55,4 +56,9 @@ button{
     font-weight: 500;   
     margin: 3%;
     box-shadow: var(--purple) 4px 4px 0 0;
+}
+
+.secondary-btn{
+    background-color: var(--light);
+    color: var(--purple);
 }

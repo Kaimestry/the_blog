@@ -1,7 +1,12 @@
 <?php
+include_once('process/settings.php');
+include_once('process/functions.php');
+
+
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+$user = getUserData($conn);
 ?>
 
 <style>
@@ -79,13 +84,27 @@ if (session_status() === PHP_SESSION_NONE) {
         position: absolute;
         top: 35px;
         right: 2%;
-        width: 300px;
         background: var(--lavender);
         padding: 2%;
         border: 1px solid var(--purple);
         border-radius: 10px;
         box-shadow: 4px 4px 0 var(--purple);    
+    }
 
+    #profile-header{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 4%;
+    }
+    #profile-header img{
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-group{
+        display: flex;
+        gap: 5%;
     }
 </style>
 
@@ -105,39 +124,46 @@ if (session_status() === PHP_SESSION_NONE) {
                 <a href="#"><i class="fa-solid fa-user-group"></i></a> <!-- Friend/Group -->
                 <a href="#"><i class="fa-solid fa-bell"></i></a> <!-- Notification -->
                 <a href="javascript:void(0);" onclick="open_widget()"> <!-- Profile -->
+                    <?php if (!isset($_SESSION['username']) || !$user): ?>
+                    <!-- GUEST VIEW -->
+                    <i class="fa-solid fa-circle-user"></i>
+                    <?php else: ?>
+                    <!-- LOGGED VIEW -->
                     <img src="" alt="">
+                    <?php endif; ?>
                 </a>
             </nav>
         </div>
         <div id="profile-widget" class="">
-            <?php
-            // Check if the user is logged in
-            if (!isset($_SESSION['email'])) {
-                //Guest view -> Login
-                echo "<figure>";
-                echo "<img src='' alt=''>";
-                echo "</figure>";
-                echo "<section>";
-                echo "<h3>Guest Account</h3>";
-                echo "<p>Login to get access to more feature</p>";
-                echo "<form action='login.php'>";
-                echo "<button type='submit' class='primary-btn'>Login</button>";
-                echo "</form>";
-                echo "</section> ";
-            }else{
-                //Logged view -> Can go to profile edits
-                echo "<figure>";
-                echo "<img src='' alt=''>";
-                echo "</figure>";
-                echo "<section>";
-                echo "<h3>" . ($_SESSION['username']) . "</h3>";
-                echo "<p>Something About profile ig</p>";
-                echo "<form action='profile.php'>";
-                echo "<button type='submit' class='primary-btn'>View Profile</button>";
-                echo "</form>";
-                echo "</section> ";
-            }
-            ?>
+            <?php if (!isset($_SESSION['username']) || !$user): ?>
+                <!-- GUEST VIEW -->
+                <section>
+                    <h3>You're using Guest Account</h3>
+                    <p>Login right now to see your profile and get access to other features!</p>
+                    <form action="login.php">
+                        <button type="submit" class="primary-btn">Login</button>
+                    </form>
+                </section>
+
+            <?php else: ?>
+                <!-- LOGGED VIEW -->
+                <figure id="profile-header">
+                    <img src="" alt="">
+                    <figcaption>
+                        <?= $user['display_username'] ?? ''; ?>
+                        <h4>@<?= $user['username'] ?? ''; ?></h4>
+                    </figcaption>
+                </figure>
+                <section class="btn-group">
+                    <form action="profile.php">
+                        <button type="submit" class="primary-btn">View Profile</button>
+                    </form>
+                    <form action="process/logout.php">
+                        <button type="submit" class="secondary-btn">Logout</button>
+                    </form>
+                </section>
+            <?php endif; ?>
+
         </div>
     </header>
 

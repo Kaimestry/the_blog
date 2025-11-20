@@ -36,11 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             exit();
 
         //start session
-        $_SESSION['username'] = $row['username'];
-        $_SESSION['display_username'] = $row['display_username'];
-        $_SESSION['email'] = $row['email'];
-        $_SESSION['signup_date'] = $row['signup_date'];   
-             
+        $_SESSION['username'] = $row['username'];             
         } else {
             $errors['general'] = "Database error, try again.";
         }
