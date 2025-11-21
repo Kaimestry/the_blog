@@ -118,70 +118,70 @@ $user = getUserData($conn);
 
 </style>
 
-    <!-- STICKY AVBAR -->
-    <header>
-        <div class="header-container">
-            <div class="brand">
-                <img class="logo" src="images/The_blog_logo.png" alt="Logo">
-                <h3>The "Blog"</h3>
+<!-- STICKY AVBAR -->
+<header>
+    <div class="header-container">
+        <div class="brand">
+            <img class="logo" src="images/The_blog_logo.png" alt="Logo">
+            <h3>The "Blog"</h3>
+        </div>
+        <nav class="navbar">
+            <div class="decoration">
+                <a href="#" class="divider-line">.</a>
+                <a href="#" class="divider-line">.</a>
             </div>
-            <nav class="navbar">
-                <div class="decoration">
-                    <a href="#" class="divider-line">.</a>
-                    <a href="#" class="divider-line">.</a>
-                </div>
-                <a href="index.php"><i class="fa-solid fa-house"></i></a> <!-- Home -->
-                <a href="#"><i class="fa-solid fa-user-group"></i></a> <!-- Friend/Group -->
-                <a href="#"><i class="fa-solid fa-bell"></i></a> <!-- Notification -->
-                <a href="javascript:void(0);" onclick="open_widget()"> <!-- Profile -->
-                    <?php if (!isset($_SESSION['username']) || !$user): ?>
-                    <!-- GUEST VIEW -->
-                    <i class="fa-solid fa-circle-user"></i>
-                    <?php else: ?>
-                    <!-- LOGGED VIEW -->
-                    <img src="" alt="">
-                    <?php endif; ?>
-                </a>
-            </nav>
-        </div>
-        <div id="profile-widget" class="">
-            <?php if (!isset($_SESSION['username']) || !$user): ?>
+            <a href="index.php"><i class="fa-solid fa-house"></i></a> <!-- Home -->
+            <a href="#"><i class="fa-solid fa-user-group"></i></a> <!-- Friend/Group -->
+            <a href="#"><i class="fa-solid fa-bell"></i></a> <!-- Notification -->
+            <a href="javascript:void(0);" onclick="open_widget()"> <!-- Profile -->
+                <?php if (!isset($_SESSION['username']) || !$user): ?>
                 <!-- GUEST VIEW -->
-                <section>
-                    <h3>You're using Guest Account</h3>
-                    <p>Login right now to see your profile and get access to other features!</p>
-                    <form action="login.php">
-                        <button type="submit" class="primary-btn">Login</button>
-                    </form>
-                </section>
-
-            <?php else: ?>
+                <i class="fa-solid fa-circle-user"></i>
+                <?php else: ?>
                 <!-- LOGGED VIEW -->
-                <figure id="profile-header">
-                    <img src="" alt="">
-                    <figcaption>
-                        <?= $user['display_username'] ?? ''; ?>
-                        <h4>@<?= $user['username'] ?? ''; ?></h4>
-                    </figcaption>
-                </figure>
-                <div class="btn-row">
-                    <form action="profile.php">
-                        <button type="submit" class="primary-btn">View Profile</button>
-                    </form>
-                    <form action="process/logout.php">
-                        <button type="submit" class="secondary-btn">Logout</button>
-                    </form>
-                </div>
-                <hr>
-                <div class="btn-col">
-                    <button class="long-btn">Setting</button>
-                    <button class="long-btn" id="theme-btn">Switch Theme</button>
-                </div>
+                <img src="" alt="">
+                <?php endif; ?>
+            </a>
+        </nav>
+    </div>
+    <div id="profile-widget" class="">
+        <?php if (!isset($_SESSION['username']) || !$user): ?>
+            <!-- GUEST VIEW -->
+            <section>
+                <h3>You're using Guest Account</h3>
+                <p>Login right now to see your profile and get access to other features!</p>
+                <form action="login.php">
+                    <button type="submit" class="primary-btn">Login</button>
+                </form>
+            </section>
 
-            <?php endif; ?>
+        <?php else: ?>
+            <!-- LOGGED VIEW -->
+            <figure id="profile-header">
+                <img src="" alt="">
+                <figcaption>
+                    <?= $user['display_username'] ?? ''; ?>
+                    <h4>@<?= $user['username'] ?? ''; ?></h4>
+                </figcaption>
+            </figure>
+            <div class="btn-row">
+                <form action="profile.php">
+                    <button type="submit" class="primary-btn">View Profile</button>
+                </form>
+                <form action="process/logout.php">
+                    <button type="submit" class="secondary-btn">Logout</button>
+                </form>
+            </div>
+            <hr>
+            <div class="btn-col">
+                <button class="long-btn">Setting</button>
+                <button class="long-btn" id="theme-btn">Switch Theme</button>
+            </div>
 
-        </div>
-    </header>
+        <?php endif; ?>
+
+    </div>
+</header>
 
 <script>
 function open_widget() {

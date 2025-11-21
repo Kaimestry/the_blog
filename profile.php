@@ -56,11 +56,7 @@ $user = getUserData($conn);
                     <h3 class="group-title"><span class="text-bold">FOLLOWING: </span><span>15</span></h3>
                 </div>
                 <div class="content-group profile-bio">
-                    <p>akjsdhfkahsdfklhaskjdfhklhasdfasdfasdf
-                        ajskdhflkahsdkfhklashdflasdfasdfasdfasdf
-                        kjasdhfkljahskdhfklahskdlfhasdfasadfasdfas
-                        ajsjdhfjkhaskdhflkhsadfkjhlaasdfasdfasdfdf
-                    </p>
+                    <p><?= $user['user_bio'] ?? 'Bio is not set yet'; ?></p>
                 </div>
             </div>
         </section>

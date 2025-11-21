@@ -17,6 +17,8 @@
     background-color: var(--lavender);
     color: var(--purple); /*TEXT COLOR*/
     font-family: var(--text);
+    box-shadow: var(--purple) 4px 4px 0 0;    
+
 }
 
 .small-container .container-content{
@@ -71,4 +73,5 @@
     padding: 3%;
     border-radius: 10px;
     font-size: var(--fz-normal);
+    width: 400px;
 }

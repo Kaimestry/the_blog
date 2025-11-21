@@ -13,6 +13,7 @@
 <body>
     <!-- STICKY AVBAR -->
     <?php include "elements/navbar.php"?>
+    <?php include "elements/asidebar.php"?>
 
 </body>
 </html>
